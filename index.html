@@ -27,7 +27,7 @@
 	<!-- AMP Library -->
 	<script async src="https://cdn.ampproject.org/v0.js"></script>
     <script custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js" async></script>
-  
+    <script src="https://kit.fontawesome.com/b1ae719aeb.js" crossorigin="anonymous"></script>
     <script custom-element="amp-mega-menu" src="https://cdn.ampproject.org/v0/amp-mega-menu-0.1.js" async></script>
     <script async custom-element="amp-base-carousel" src="https://cdn.ampproject.org/v0/amp-base-carousel-0.1.js"></script>
 	<script async custom-element="amp-facebook-like" src="https://cdn.ampproject.org/v0/amp-facebook-like-0.1.js"></script>
@@ -141,6 +141,7 @@
 			background: linear-gradient(to bottom,#fee801 0,#ffba1e 100%);
 		}
 		.btn-style-green{
+            background-color: #5cb85c;
 			background-image: -webkit-linear-gradient(top,#5cb85c 0,#419641 100%);
 			background-image: -o-linear-gradient(top,#5cb85c 0,#419641 100%);
 			background-image: -webkit-gradient(linear,left top,left bottom,from(#5cb85c),to(#419641));
@@ -213,15 +214,14 @@
 		}
 		.marquee {
 			text-align: center;
-			padding: 15px;
+			padding: 10px;
 			font-family: 'Trebuchet MS';
-			background: radial-gradient(circle 214px at 49.5% 54.2%,#3593ff 0,#0a2845 90%);
+			background: radial-gradient(circle 514px at 49.5% 54.2%,#E4CB1C 0,#0C1824 90%);
 			color: #fff;
-			border: 1px solid #fff;
+            /* border: 1px solid #944f00; */
 			border-radius: 5px;
 			max-width: 100%;
-			text-align: center;
-			margin-bottom: 10px;
+            margin-bottom: 15px;
 		}
 		.app-store{
 			display: flex;
@@ -385,7 +385,27 @@
             max-width: 100%;
             height: auto;
         }
-
+        .footer-misc{
+            display: flex;
+            justify-content: space-between; 
+            text-align: justify; 
+            color: rgb(241, 241, 241);
+            font-family: 'Open Sans', sans-serif;
+        }
+        .footer-misc div{
+            width: 280px; 
+            font-size: 13px;
+            padding: 15px;
+        }
+        .footer-misc h3{
+            background: -webkit-linear-gradient(#E4CB1C, #333);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .featured-cont{
+                display: flex;
+                justify-content: space-between;
+        }
 		@keyframes blinker{
 			0% {
 			border-color: #fff;
@@ -398,7 +418,7 @@
 			}
 		}
 		@media (max-width: 767px){
-			#header .container{
+			#header .container, .footer-misc{
 				display: block;
 			}
 			#site-logo,
@@ -412,6 +432,8 @@
 			#site-nav{
 				display: flex;
 			}
+
+            
 			#header nav a{
 				width: 50%;
 				margin: 5px;
@@ -439,6 +461,10 @@
 				#header nav a{
 					font-size: 16px;
 				}
+                .hide-for-small-device{
+                    display: none;
+                }
+                
 			}
 	</style>
 </head>
@@ -460,7 +486,7 @@
 	</header>
 
 
-	<!-- This is the carousel --> 
+	<!-- Dropdown --> 
 	<div class="container">
         <amp-mega-menu height="50"  layout="fixed-height">
             <nav>
@@ -492,16 +518,180 @@
             </nav>
           </amp-mega-menu>
     </div>
-   
+    
+    <!-- Carousel Desktop -->
     <amp-carousel type="slides" width="800" height="200" controls loop autoplay delay="3000" layout="responsive"  data-next-button-aria-label="Go to next slide" data-previous-button-aria-label="Go to previous slide" role="region"
     aria-label="Looping carousel">
         <amp-img src="./images/6340d6ce31604_homepage banner mbsn.webp" width="400" height="200" layout="responsive"></amp-img>
         <amp-img src="./images/63369478a10ca_1-1920x430.webp" width="400" height="200" layout="responsive"></amp-img>
     </amp-carousel>
-		
+
+    <!-- Carousel Mobile  -->
+    <!-- <amp-carousel class="hide-for-small-device" type="slides" width="800" height="200" controls loop autoplay delay="3000" layout="responsive"  data-next-button-aria-label="Go to next slide" data-previous-button-aria-label="Go to previous slide" role="region"
+    aria-label="Looping carousel">
+        <amp-img src="./images/6340d6ce31604_homepage banner mbsn.webp" width="400" height="200" layout="responsive"></amp-img>
+        <amp-img src="./images/63369478d4e24_1-400x350.jpg" width="400" height="200" layout="responsive"></amp-img>
+    </amp-carousel> -->
+    <div class="marquee">
         <marquee width="100%" direction="left">
-            Selamat datang di situs MABOSBET, disini kami menyediakan permainan judi online yang lengkap dengan minimal deposit hanya 10 ribu.
+            <i class="fa fa-bullhorn"></i> Selamat datang di situs MABOSBET, disini kami menyediakan permainan judi online yang lengkap dengan minimal deposit hanya 10 ribu.
         </marquee>
+    </div>
+    <div class="container featured-cont">
+        <div>
+            <amp-img src="./images/634516e633ff9_92--desktop-banner-540x118-v4.webp" width="600" height="150" ></amp-img>
+        </div>
+        <div>
+            TExt
+        </div>
+    </div>
+    <div class="container footer-misc">
+        <div>
+            <h3>
+                INFORMATION
+            </h3>
+            <div class="separator"></div>
+            <article>
+                <h4>
+                    Registration
+                </h4>
+                <p>
+                    Join MABOSBET to experience an amazing and interesting game. Enjoy satisfaction with bonuses and promotions on our site.
+                </p>
+            </article>
+            <article>
+                <h4>
+                    Affiliation
+                </h4>
+                <p>
+                    Become our partner by joining affiliates MABOSBET. Get your income and commission every month by inviting your friends to play on MABOSBET.
+                </p>
+            </article>
+            <article>
+                <h4>
+                    Responsible Games
+                </h4>
+                <p>
+                    MABOSBET offering the best online games with full responsibility and fairplay games. Security is always our priority.
+                </p>
+            </article>
+            <article>
+                <h4>
+                    Security
+                </h4>
+                <p>
+                    MABOSBET offering the best online games with full responsibility and fairplay games. Security is always our priority.</div>
+                </p>
+            </article>
+           
+            <div>
+                <h3>
+                    PRODUCT
+                </h3>
+                <div class="separator"></div>
+                <article>
+                    <h4>
+                        Sportsbook & Live Betting
+                    </h4>
+                    <p>
+                        Get thousands of sports opportunities every day on MABOSBET. Possibilities for the most popular sports such as soccer, basketball, tennis, hockey are available with Live Bets every day.
+                    </p>
+                </article>
+                <article>
+                    <h4>
+                        Online Casino
+                    </h4>
+                    <p>
+                        MABOSBET provides the best online casino games like Baccarat, Blackjack, Roulete, Sic Bo, Poker, and other popular games at online casinos.
+                    </p>
+                </article>
+                <article>
+                    <h4>
+                        Live Casino
+                    </h4>
+                    <p>
+                        Play at live casino MABOSBET and You will feel the real casino sensation. Choose the various casino games you want.</div>
+                    </p>
+                </article>
+           
+           <div>
+                <h3>
+                    INFO CENTER
+                </h3>
+                <div class="separator"></div>
+                <article>
+                    <h4>
+                        Promotion
+                    </h4>
+                    <p>
+                        Get lots of promotions from MABOSBET like welcome bonuses, deposit bonuses and cash discounts. Feel satisfied by joining a promotion MABOSBET.
+                    </p>
+                </article>
+                <article>
+                    <h4>
+                        Help
+                    </h4>
+                    <p>
+                        If you have a problem when you play online gambling on MABOSBET, you can contact us immediately, and we are always ready to help you 24 hours.
+                    </p>
+                </article>
+                <article>
+                    <h4>
+                        Transaction Method
+                    </h4>
+                    <p>
+                        MABOSBET providing local and international banks to make it easier for every customer to deposit and withdraw. The transaction method is guaranteed to be safe, fast and reliable.
+                    </p>
+                </article>
+                <article>
+                    <h4>
+                        Contact us
+                    </h4>
+                    <p>
+                        You can contact MABOSBET at any time if you have questions and problems. You can contact us via livechat, text, telephone, BBM, Skype, or email. Our staff is always ready 24 hours for you.</div>
+                    </p>
+                </article>
+            
+            <div>
+                <h3>
+                    BETTING INFO
+                </h3>
+                <div class="separator"></div>
+                <article>
+                    <h4>
+                        Sports Match Results
+                    </h4>
+                    <p>
+                        Complete results of your sports betting are available on MABOSBET. Get the latest results that you play in your history.
+                    </p>
+                </article>
+                <article>
+                    <h4>
+                        Betting Statistics
+                    </h4>
+                    <p>
+                        Access all the sports betting details that you play and check the history of bets in full on MABOSBET.
+                    </p>
+                </article>
+                <article>
+                    <h4>
+                        Sports gambling
+                    </h4>
+                    <p>
+                        Bet on sports games, get complete obstacles every day and feel the fun with sportsbook MABOSBET.
+                    </p>
+                </article>
+                <article>
+                    <h4>
+                        Casino Betting
+                    </h4>
+                    <p>
+                        Feel the luxury of casino betting, complete the full betting history you have played. Casino gambling on MABOSBET, fast, safe and enjoyfull.
+                    </p>
+                </article>
+           </div>
+    </div>
+
 
 	<div class="container">
 		<amp-social-share type="facebook" width="30" height="30"
