@@ -31,13 +31,12 @@
     <script custom-element="amp-mega-menu" src="https://cdn.ampproject.org/v0/amp-mega-menu-0.1.js" async></script>
     <script async custom-element="amp-base-carousel" src="https://cdn.ampproject.org/v0/amp-base-carousel-0.1.js"></script>
 	<script async custom-element="amp-facebook-like" src="https://cdn.ampproject.org/v0/amp-facebook-like-0.1.js"></script>
-	<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 	<script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
-	<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
 	<script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
 	<script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
 	<script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
 	<script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
+	<script async custom-element="amp-base-carousel" src="https://cdn.ampproject.org/v0/amp-base-carousel-0.1.js"></script>
 	<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 	<style amp-custom>
 
@@ -406,6 +405,36 @@
                 display: flex;
                 justify-content: space-between;
         }
+		.grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+			grid-gap: 3rem;
+			width: 100%;
+			max-width: 1180px;
+			margin: 0 auto;
+		}
+
+		amp-base-carousel .item {
+			padding: 15px 35px;
+		}
+
+		amp-base-carousel amp-img{
+			border-radius: 15px;
+			background-color: #000;
+		}
+
+		.game-title {
+			text-align: left;
+			height: 60px;
+			width: 100px;
+			background-color: #171613;
+			color: #fff;
+			font-weight: 800;
+		}
+		#wrapper {
+			width: 400px;
+		}
+
 		@keyframes blinker{
 			0% {
 			border-color: #fff;
@@ -455,15 +484,16 @@
 			.test{
 				background-color: #2672c6;
 			}
+			.hide-for-small-device{
+                    display: none;
+            }
 			}
 
 			@media (max-width: 400px){
 				#header nav a{
 					font-size: 16px;
 				}
-                .hide-for-small-device{
-                    display: none;
-                }
+               
                 
 			}
 	</style>
@@ -520,7 +550,7 @@
     </div>
     
     <!-- Carousel Desktop -->
-    <amp-carousel type="slides" width="800" height="200" controls loop autoplay delay="3000" layout="responsive"  data-next-button-aria-label="Go to next slide" data-previous-button-aria-label="Go to previous slide" role="region"
+    <amp-carousel type="slides" width="800" height="180" controls loop autoplay delay="3000" layout="responsive"  data-next-button-aria-label="Go to next slide" data-previous-button-aria-label="Go to previous slide" role="region"
     aria-label="Looping carousel">
         <amp-img src="./images/6340d6ce31604_homepage banner mbsn.webp" width="400" height="200" layout="responsive"></amp-img>
         <amp-img src="./images/63369478a10ca_1-1920x430.webp" width="400" height="200" layout="responsive"></amp-img>
@@ -532,19 +562,160 @@
         <amp-img src="./images/6340d6ce31604_homepage banner mbsn.webp" width="400" height="200" layout="responsive"></amp-img>
         <amp-img src="./images/63369478d4e24_1-400x350.jpg" width="400" height="200" layout="responsive"></amp-img>
     </amp-carousel> -->
-    <div class="marquee">
-        <marquee width="100%" direction="left">
-            <i class="fa fa-bullhorn"></i> Selamat datang di situs MABOSBET, disini kami menyediakan permainan judi online yang lengkap dengan minimal deposit hanya 10 ribu.
-        </marquee>
-    </div>
-    <div class="container featured-cont">
-        <div>
-            <amp-img src="./images/634516e633ff9_92--desktop-banner-540x118-v4.webp" width="600" height="150" ></amp-img>
-        </div>
-        <div>
-            TExt
-        </div>
-    </div>
+
+	<!-- Games -->
+	<div class="container">
+		
+	</div>
+
+
+	<div class="marquee">
+		<marquee width="100%" direction="left">
+			<i class="fa fa-bullhorn"></i> Selamat datang di situs MABOSBET, disini kami menyediakan permainan judi online yang lengkap dengan minimal deposit hanya 10 ribu.
+		</marquee>
+	</div>
+
+
+	<div class="grid">
+		<div class="feat">
+			<amp-img src="./images/634516e633ff9_92--desktop-banner-540x118-v4.webp" width="600" height="150" ></amp-img>
+		</div>
+		<div class="feat project-second-image">
+			<amp-base-carousel class="gallery" layout="responsive" width="33" height="10" visible-count="3.3" advance-count="1" loop="false"> 
+				<div class="item">
+					<a href="">
+						<amp-img src="./hot_games_img/mobile/normal/Candy_dreams.webp"
+						width="200"
+						height="190"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="game-title">Candy Dreams</div>
+					</a>
+					
+				</div>
+				<div class="item">
+					<amp-img src="./hot_games_img/mobile/normal/dragon_tavern_bonus_buy.jpg"
+					width="180"
+					height="190"
+					layout="responsive"
+					alt="">
+					</amp-img>
+					<div class="game-title">Dragon's Tavern Bonus Buy</div>
+				</div>
+				<div class="item">
+					<amp-img src="./hot_games_img/mobile/normal/Fruit_super_nova_60.png"
+					width="200"
+					height="190"
+					layout="responsive"
+					alt="">
+					</amp-img>
+					<div class="game-title">Fruit Super Nova 60</div>
+				</div>
+				<div class="item">
+					<amp-img src="./hot_games_img/mobile/normal/Gold_of_Sirens_bonus_buy.webp"
+					width="200"
+					height="190"
+					layout="responsive"
+					alt="">
+					</amp-img>
+					<div class="game-title">Gold of Sirens Bonus Buy</div>
+				</div>
+				<div class="item">
+					<amp-img src="./hot_games_img/mobile/normal/gp_lunarlegends.webp"
+					width="200"
+					height="190"
+					layout="responsive"
+					alt="">
+					</amp-img>
+					<div class="game-title">Lunar Legends</div>
+				</div>
+				<div class="item">
+					<amp-img src="./hot_games_img/mobile/normal/hot-ug-gateofolympus.webp"
+					width="200"
+					height="190"
+					layout="responsive"
+					alt="">
+					</amp-img>
+					<div class="game-title">Gates of Olympus</div>
+				</div>
+				<div class="item">
+					<amp-img src="./hot_games_img/mobile/normal/hot-ug-sweet-bonanza.webp"
+					width="200"
+					height="190"
+					layout="responsive"
+					alt="">
+					</amp-img>
+					<div class="game-title">Sweet Bonanza</div>
+				</div>
+				<div class="item">
+					<amp-img src="./hot_games_img/mobile/normal/jk_roma.webp"
+					width="200"
+					height="190"
+					layout="responsive"
+					alt="">
+					</amp-img>
+					<div class="game-title">Dragon Tavern</div>
+				</div>
+				<div class="item">
+					<amp-img src="./hot_games_img/mobile/normal/mg_breakbank.webp"
+					width="200"
+					height="190"
+					layout="responsive"
+					alt="">
+					</amp-img>
+					<div class="game-title">Dragon Tavern</div>
+				</div>
+				<div class="item">
+					<amp-img src="./hot_games_img/mobile/normal/pp_lionsgold.webp"
+					width="200"
+					height="190"
+					layout="responsive"
+					alt="">
+					</amp-img>
+					<div class="game-title">Dragon Tavern</div>
+				</div>
+				<div class="item">
+					<amp-img src="./hot_games_img/mobile/normal/sg_money_mouse.png"
+					width="200"
+					height="190"
+					layout="responsive"
+					alt="">
+					</amp-img>
+					<div class="game-title">Dragon Tavern</div>
+				</div>
+				<div class="item">
+					<amp-img src="./hot_games_img/mobile/normal/SGHotHotFruit.webp"
+					width="200"
+					height="190"
+					layout="responsive"
+					alt="">
+					</amp-img>
+					<div class="game-title">Dragon Tavern</div>
+				</div>
+				<div class="item">
+					<amp-img src="./hot_games_img/mobile/normal/ttg_Zeus_vs_Hades.webp"
+					width="200"
+					height="190"
+					layout="responsive"
+					alt="">
+					</amp-img>
+					<div class="game-title">Dragon Tavern</div>
+				</div>
+				<div class="item">
+					<amp-img src="./hot_games_img/mobile/normal/vs20starlight_83_tiny.webp"
+					width="200"
+					height="190"
+					layout="responsive"
+					alt="">
+					</amp-img>
+					<div class="game-title">Dragon Tavern</div>
+				</div>
+				
+			  </amp-base-carousel>
+		</div>
+	  </div>
+
     <div class="container footer-misc">
         <div>
             <h3>
@@ -693,7 +864,7 @@
     </div>
 
 
-	<div class="container">
+	<!-- <div class="container">
 		<amp-social-share type="facebook" width="30" height="30"
 			data-param-text="HTML Cheat Sheet"
 			data-param-url="https://htmlcheatsheet.com">
@@ -706,10 +877,10 @@
 		data-param-text="HTML Cheat Sheet"
 		data-param-url="https://htmlcheatsheet.com">
 		</amp-social-share>
-	</div>
+	</div> -->
 
 	<!-- Burger Menu -->
-	<div class="container">
+	<!-- <div class="container">
 		<header class="headerbar">
 			<div role="button" class="hamburger" on="tap:sidebar1.toggle" tabindex="0">
 				<div></div>
@@ -726,7 +897,10 @@
 			</ul>
 		 </amp-sidebar>
 	</div>
-	
+	 -->
+
+
+
 	<!-- Accordion Section -->
 	<div class="container">
 		<amp-accordion>
@@ -755,18 +929,6 @@
 			</section>
 		 </amp-accordion>
 	</div>
-
-
-	<!-- Facebook Comment Section -->
-	<amp-facebook-comments width="300"
-		height="350"
-		layout="responsive"
-		data-numposts="5"
-		data-colorscheme="dark"
-		data-locale="es_ES"
-		data-order-by="time"
-		data-href="https://htmlcheatsheet.com/">
-	</amp-facebook-comments>
 
 	<div class="container">
 		<div class="featured box">
@@ -871,15 +1033,14 @@
           </div>
           <div class="footerlink">
             <ul class="clearfix">
-                      <li><a href="https://www.mabosbet.xyz/info/faq-general">About Us</a></li>
-                        <li>|</li>
-                        <li><a href="https://www.mabosbet.xyz/info/faq-banking">Banking Info</a></li>
-                        <li>|</li>
-                        <li><a href="https://www.mabosbet.xyz/info/faq-general" >Info Centre</a></li>
-                        <li>|</li>
-                        <li><a href="https://www.mabosbet.xyz/contact-us"   >Contact Us</a></li>
-                        
-                      </ul>
+                <li><a href="https://www.mabosbet.xyz/info/faq-general">About Us</a></li>
+                <li>|</li>
+                <li><a href="https://www.mabosbet.xyz/info/faq-banking">Banking Info</a></li>
+                <li>|</li>
+                <li><a href="https://www.mabosbet.xyz/info/faq-general" >Info Centre</a></li>
+                <li>|</li>
+                <li><a href="https://www.mabosbet.xyz/contact-us"   >Contact Us</a></li>
+            </ul>
           </div>
         </div>
 	<footer id="site-footer">
