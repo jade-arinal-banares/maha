@@ -431,6 +431,11 @@
 			color: #fff;
 			font-weight: 800;
 		}
+
+		.mobile-game-icons{
+			width: 80px;
+			height: auto;
+		}
 		#wrapper {
 			width: 400px;
 		}
@@ -489,13 +494,44 @@
             }
 			}
 
-			@media (max-width: 400px){
+			@media (max-width: 915px) and (min-width: 300px){
 				#header nav a{
 					font-size: 16px;
 				}
-               
+                .hide-for-mobile{
+					display: none;
+				}
+				amp-base-carousel .item {
+					padding: 0px 5px;
+				}
+				.daily-wins, .hot-game-tag {
+					position: absolute;
+					z-index: 1;
+					width: 60px;
+					background-size: 60px;
+				}
+				.hot-game-tag {
+					top: -4px;
+					left: 2px;
+					height: 51px;
+					background-image: url(./assets/images/sprites/game-tag-icon-hot.webp);
+				}
                 
 			}
+			@media (max-width: 1920px) and (min-width: 914px){
+				#header nav a{
+					font-size: 16px;
+				}
+                .hide-for-desktop{
+					display: none;
+				}
+				amp-carousel amp-img.test{
+					width: 1000px;
+
+					background-color: red;
+				}
+			}
+			
 	</style>
 </head>
 <body>	
@@ -552,24 +588,20 @@
     </div>
     
     <!-- Carousel Desktop -->
-    <amp-carousel type="slides" width="800" height="180" controls loop autoplay delay="3000" layout="responsive"  data-next-button-aria-label="Go to next slide" data-previous-button-aria-label="Go to previous slide" role="region"
+    <amp-carousel class="hide-for-mobile" type="slides" width="800" height="180" controls loop autoplay delay="3000" layout="responsive"  data-next-button-aria-label="Go to next slide" data-previous-button-aria-label="Go to previous slide" role="region"
     aria-label="Looping carousel">
-        <amp-img src="./images/6340d6ce31604_homepage banner mbsn.webp" width="400" height="200" layout="responsive"></amp-img>
-        <amp-img src="./images/63369478a10ca_1-1920x430.webp" width="400" height="200" layout="responsive"></amp-img>
+		<amp-img src="./banners/6355e5725eabe_1920x430 (1).webp" width="400" height="200" layout="responsive"></amp-img>
+		<amp-img src="./banners/63369478a10ca_1-1920x430.webp" width="400" height="200" layout="responsive"></amp-img>
+        <amp-img src="./banners/6340d6ce31604_homepage banner mbsn.webp" width="400" height="200" layout="responsive"></amp-img>
     </amp-carousel>
 
     <!-- Carousel Mobile  -->
-    <!-- <amp-carousel class="hide-for-small-device" type="slides" width="800" height="200" controls loop autoplay delay="3000" layout="responsive"  data-next-button-aria-label="Go to next slide" data-previous-button-aria-label="Go to previous slide" role="region"
+    <amp-carousel class="hide-for-desktop" type="slides" width="400" height="200" controls loop autoplay delay="3000" layout="responsive"  data-next-button-aria-label="Go to next slide" data-previous-button-aria-label="Go to previous slide" role="region"
     aria-label="Looping carousel">
-        <amp-img src="./images/6340d6ce31604_homepage banner mbsn.webp" width="400" height="200" layout="responsive"></amp-img>
-        <amp-img src="./images/63369478d4e24_1-400x350.jpg" width="400" height="200" layout="responsive"></amp-img>
-    </amp-carousel> -->
-
-	<!-- Games -->
-	<div class="container">
-		
-	</div>
-
+		<amp-img src="./banners/6355e5729ad19_560x280 (1).webp" width="600" height="300" layout="responsive"></amp-img>
+		<amp-img class="test" src="./banners/6340d6ce658de_home banner mbsn.webp" width="1000" height="500" layout="responsive"></amp-img>
+        <amp-img src="./banners/63369478d4e24_1-400x350.webp" width="600" height="300" layout="responsive"></amp-img>
+    </amp-carousel>
 
 	<div class="marquee">
 		<marquee width="100%" direction="left">
@@ -578,8 +610,12 @@
 	</div>
 
 
-	<div class="grid">
-		<div class="feat">
+	<div class="grid hide-for-mobile">
+
+		<div class="feat hide-for-desktop">
+			<amp-img src="./progressive_img/634516e668956_92--mobile-banner-360x79-v4.webp" width="380" height="100" ></amp-img>
+		</div>
+		<div class="feat hide-for-mobile">
 			<amp-img src="./images/634516e633ff9_92--desktop-banner-540x118-v4.webp" width="600" height="150" ></amp-img>
 		</div>
 		<div class="feat project-second-image">
@@ -717,6 +753,1059 @@
 			  </amp-base-carousel>
 		</div>
 	  </div>
+
+	  <div class="container">
+
+		<!-- Games: Mobile Device -->
+		<div class="grid hide-for-desktop">
+			<div class="feat hide-for-desktop">
+				<amp-img src="./progressive_img/634516e668956_92--mobile-banner-360x79-v4.webp" width="380" height="100" ></amp-img>
+			</div>
+			<div class="feat hide-for-mobile">
+				<amp-img src="./images/634516e633ff9_92--desktop-banner-540x118-v4.webp" width="600" height="150" ></amp-img>
+			</div>
+			<div class="feat project-second-image">
+				<div>GAME TERPOPULAR</div>
+				<amp-base-carousel class="gallery" layout="responsive" width="33" height="10" visible-count="3.3" advance-count="1" loop="false"> 
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<a href="">
+							<amp-img src="./hot_games_img/mobile/normal/Candy_dreams.webp"
+							width="70"
+							height="70"
+							layout="responsive"
+							alt="">
+							</amp-img>
+							<div class="mobile-game-icons">Candy Dreams</div>
+						</a>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/dragon_tavern_bonus_buy.jpg"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Dragon's Tavern Bonus Buy</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/Fruit_super_nova_60.png"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Fruit Super Nova 60</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/Gold_of_Sirens_bonus_buy.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Gold of Sirens Bonus Buy</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/gp_lunarlegends.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Lunar Legends</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/hot-ug-gateofolympus.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Gates of Olympus</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/hot-ug-sweet-bonanza.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Sweet Bonanza</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/jk_roma.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Roma</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/mg_breakbank.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Break Da Bank</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/pp_lionsgold.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Aztec Gems</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/sg_money_mouse.png"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Money Mouse</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/SGHotHotFruit.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Hot Hot Fruit</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/ttg_Zeus_vs_Hades.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Thundering Zeus HS</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/vs20starlight_83_tiny.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Starlight Princess</div>
+					</div>
+					
+				  </amp-base-carousel>
+			</div>
+		  </div>
+
+		  <!-- Games: Mobile Device -->
+		<div class="grid hide-for-desktop">
+		
+			<div class="feat project-second-image">
+				<div>GAME TERPOPULAR</div>
+				<amp-base-carousel class="gallery" layout="responsive" width="33" height="10" visible-count="3.3" advance-count="1" loop="false"> 
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<a href="">
+							<amp-img src="./hot_games_img/mobile/normal/Candy_dreams.webp"
+							width="70"
+							height="70"
+							layout="responsive"
+							alt="">
+							</amp-img>
+							<div class="mobile-game-icons">Candy Dreams</div>
+						</a>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/dragon_tavern_bonus_buy.jpg"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Dragon's Tavern Bonus Buy</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/Fruit_super_nova_60.png"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Fruit Super Nova 60</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/Gold_of_Sirens_bonus_buy.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Gold of Sirens Bonus Buy</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/gp_lunarlegends.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Lunar Legends</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/hot-ug-gateofolympus.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Gates of Olympus</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/hot-ug-sweet-bonanza.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Sweet Bonanza</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/jk_roma.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Roma</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/mg_breakbank.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Break Da Bank</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/pp_lionsgold.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Aztec Gems</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/sg_money_mouse.png"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Money Mouse</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/SGHotHotFruit.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Hot Hot Fruit</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/ttg_Zeus_vs_Hades.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Thundering Zeus HS</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/vs20starlight_83_tiny.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Starlight Princess</div>
+					</div>
+					
+				  </amp-base-carousel>
+			</div>
+		  </div>
+
+		   <!-- Games: Mobile Device -->
+		<div class="grid hide-for-desktop">
+		
+			<div class="feat project-second-image">
+				<div>GAME TERPOPULAR</div>
+				<amp-base-carousel class="gallery" layout="responsive" width="33" height="10" visible-count="3.3" advance-count="1" loop="false"> 
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<a href="">
+							<amp-img src="./hot_games_img/mobile/normal/Candy_dreams.webp"
+							width="70"
+							height="70"
+							layout="responsive"
+							alt="">
+							</amp-img>
+							<div class="mobile-game-icons">Candy Dreams</div>
+						</a>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/dragon_tavern_bonus_buy.jpg"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Dragon's Tavern Bonus Buy</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/Fruit_super_nova_60.png"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Fruit Super Nova 60</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/Gold_of_Sirens_bonus_buy.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Gold of Sirens Bonus Buy</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/gp_lunarlegends.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Lunar Legends</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/hot-ug-gateofolympus.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Gates of Olympus</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/hot-ug-sweet-bonanza.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Sweet Bonanza</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/jk_roma.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Roma</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/mg_breakbank.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Break Da Bank</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/pp_lionsgold.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Aztec Gems</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/sg_money_mouse.png"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Money Mouse</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/SGHotHotFruit.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Hot Hot Fruit</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/ttg_Zeus_vs_Hades.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Thundering Zeus HS</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/vs20starlight_83_tiny.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Starlight Princess</div>
+					</div>
+					
+				  </amp-base-carousel>
+			</div>
+		  </div>
+
+		   <!-- Games: Mobile Device -->
+		<div class="grid hide-for-desktop">
+		
+			<div class="feat project-second-image">
+				<div>GAME TERPOPULAR</div>
+				<amp-base-carousel class="gallery" layout="responsive" width="33" height="10" visible-count="3.3" advance-count="1" loop="false"> 
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<a href="">
+							<amp-img src="./hot_games_img/mobile/normal/Candy_dreams.webp"
+							width="70"
+							height="70"
+							layout="responsive"
+							alt="">
+							</amp-img>
+							<div class="mobile-game-icons">Candy Dreams</div>
+						</a>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/dragon_tavern_bonus_buy.jpg"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Dragon's Tavern Bonus Buy</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/Fruit_super_nova_60.png"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Fruit Super Nova 60</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/Gold_of_Sirens_bonus_buy.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Gold of Sirens Bonus Buy</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/gp_lunarlegends.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Lunar Legends</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/hot-ug-gateofolympus.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Gates of Olympus</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/hot-ug-sweet-bonanza.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Sweet Bonanza</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/jk_roma.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Roma</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/mg_breakbank.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Break Da Bank</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/pp_lionsgold.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Aztec Gems</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/sg_money_mouse.png"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Money Mouse</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/SGHotHotFruit.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Hot Hot Fruit</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/ttg_Zeus_vs_Hades.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Thundering Zeus HS</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/vs20starlight_83_tiny.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Starlight Princess</div>
+					</div>
+					
+				  </amp-base-carousel>
+			</div>
+		  </div>
+
+		   <!-- Games: Mobile Device -->
+		<div class="grid hide-for-desktop">
+		
+			<div class="feat project-second-image">
+				<div>GAME TERPOPULAR</div>
+				<amp-base-carousel class="gallery" layout="responsive" width="33" height="10" visible-count="3.3" advance-count="1" loop="false"> 
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<a href="">
+							<amp-img src="./hot_games_img/mobile/normal/Candy_dreams.webp"
+							width="70"
+							height="70"
+							layout="responsive"
+							alt="">
+							</amp-img>
+							<div class="mobile-game-icons">Candy Dreams</div>
+						</a>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/dragon_tavern_bonus_buy.jpg"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Dragon's Tavern Bonus Buy</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/Fruit_super_nova_60.png"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Fruit Super Nova 60</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/Gold_of_Sirens_bonus_buy.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Gold of Sirens Bonus Buy</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/gp_lunarlegends.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Lunar Legends</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/hot-ug-gateofolympus.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Gates of Olympus</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/hot-ug-sweet-bonanza.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Sweet Bonanza</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/jk_roma.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Roma</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/mg_breakbank.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Break Da Bank</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/pp_lionsgold.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Aztec Gems</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/sg_money_mouse.png"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Money Mouse</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/SGHotHotFruit.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Hot Hot Fruit</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/ttg_Zeus_vs_Hades.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Thundering Zeus HS</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./hot_games_img/mobile/normal/vs20starlight_83_tiny.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Starlight Princess</div>
+					</div>
+					
+				  </amp-base-carousel>
+			</div>
+		  </div>
+
+		   <!-- Games: Mobile Device -->
+		<div class="grid hide-for-desktop">
+		
+			<div class="feat project-second-image">
+				<div>Lotre</div>
+				<amp-base-carousel class="gallery" layout="responsive" width="33" height="10" visible-count="3.3" advance-count="1" loop="false"> 
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<a href="">
+							<amp-img src="./GameImage/LotteryProviders/thumbnail/normal/"
+							width="70"
+							height="70"
+							layout="responsive"
+							alt="">
+							</amp-img>
+							<div class="mobile-game-icons">Togel</div>
+						</a>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./GameImage/LotteryProviders/thumbnail/normal/"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Racing Car</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./GameImage/LotteryProviders/thumbnail/normal/"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Number Games</div>
+					</div>
+					<div class="item">
+						<div class="hot-game-tag"></div>
+						<amp-img src="./GameImage/LotteryProviders/thumbnail/normal/"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Gold of Sirens Bonus Buy</div>
+					</div>
+
+				  </amp-base-carousel>
+			</div>
+		  </div>
+
+		   <!-- Games: Mobile Device -->
+		<div class="grid hide-for-desktop">
+		
+			<div class="feat project-second-image">
+				<div>Tembak Ikan</div>
+				<amp-base-carousel class="gallery" layout="responsive" width="33" height="10" visible-count="3.3" advance-count="1" loop="false"> 
+					<div class="item">
+						<a href="">
+							<amp-img src="./GameImage/FishingProviders/thumbnail/normal/fishing_joker.webp"
+							width="70"
+							height="70"
+							layout="responsive"
+							alt="">
+							</amp-img>
+							<div class="mobile-game-icons">Joker</div>
+						</a>
+					</div>
+					<div class="item">
+						<amp-img src="./GameImage/FishingProviders/thumbnail/normal/fishing_playstar.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Playstar</div>
+					</div>
+					<div class="item">
+						<amp-img src="./GameImage/FishingProviders/thumbnail/normal/fishing_spade.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Spade Gaming</div>
+					</div>
+					<div class="item">
+						<amp-img src="./GameImage/FishingProviders/thumbnail/normal/fishing_cq9.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">CQ9</div>
+					</div>
+					<div class="item">
+						<amp-img src="./GameImage/FishingProviders/thumbnail/normal/fishing_skywind.jpg"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Skywind</div>
+					</div>
+					<div class="item">
+						<amp-img src="./GameImage/FishingProviders/thumbnail/normal/fishing_dragoonsoft.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Dragon Soft</div>
+					</div>
+					<div class="item">
+						<amp-img src="./GameImage/FishingProviders/thumbnail/normal/KA_Gaming_Fishing.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Ka Gaming</div>
+					</div>
+				  </amp-base-carousel>
+			</div>
+		  </div>
+
+		   <!-- Games: Mobile Device -->
+		<div class="grid hide-for-desktop">
+			<div class="feat project-second-image">
+				<div>E-Games</div>
+				<amp-base-carousel class="gallery" layout="responsive" width="33" height="10" visible-count="3.3" advance-count="1" loop="false"> 
+					<div class="item">
+						<a href="">
+							<amp-img src="./GameImage/RngProviders/thumbnail/normal/rng_cbt.webp"
+							width="70"
+							height="70"
+							layout="responsive"
+							alt="">
+							</amp-img>
+							<div class="mobile-game-icons">Classic Bola</div>
+						</a>
+					</div>
+					<div class="item">
+						<amp-img src="./GameImage/RngProviders/thumbnail/normal/rng_bt.jpg"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Bola Tanka</div>
+					</div>
+					<div class="item">
+						<amp-img src="./GameImage/RngProviders/thumbnail/normal/rng_ukeno.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Ultimate Ken</div>
+					</div>
+					<div class="item">
+						<amp-img src="./GameImage/RngProviders/thumbnail/normal/rng_ckeno15.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Classic Keno 10</div>
+					</div>
+					<div class="item">
+						<amp-img src="./GameImage/RngProviders/thumbnail/normal/rng_cpoker.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Caribbean Stud Poker</div>
+					</div>
+					<div class="item">
+
+						<amp-img src="./GameImage/RngProviders/thumbnail/normal/rng_baccarat.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Baccarat</div>
+					</div>
+					<div class="item">
+						<amp-img src="./GameImage/RngProviders/thumbnail/normal/baccarat.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Baccarat</div>
+					</div>
+					<div class="item">
+						<amp-img src="./GameImage/RngProviders/thumbnail/normal/multihand_blackjack.webp"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Multihand Blackjack</div>
+					</div>
+					<div class="item">
+						<amp-img src="./GameImage/RngProviders/thumbnail/normal/dragon_tiger.jpg"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Dragon Tiger</div>
+					</div>
+					<div class="item">
+						<amp-img src="./GameImage/RngProviders/thumbnail/normal/slot_prag_dragon.jpg"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Dragon Bonus Baccarat</div>
+					</div>
+					<div class="item">
+						<amp-img src="./GameImage/RngProviders/thumbnail/normal/slot_prag_roulette.jpg"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Roulette</div>
+					</div>
+					<div class="item">
+						<amp-img src="./GameImage/RngProviders/thumbnail/normal/american_blackjack.jpg"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">American Blackjack</div>
+					</div>
+					<div class="item">
+						<amp-img src="./GameImage/RngProviders/thumbnail/normal/spaceman.jpg"
+						width="80"
+						height="70"
+						layout="responsive"
+						alt="">
+						</amp-img>
+						<div class="mobile-game-icons">Spaceman</div>
+					</div>
+				  </amp-base-carousel>
+			</div>
+		  </div>
+
+		   <!-- Games: Mobile Device -->
+		<div class="grid hide-for-desktop">
+		
+			<div class="feat project-second-image">
+				<div>Sabung Ayam</div>
+				<amp-base-carousel class="gallery" layout="responsive" width="33" height="10" visible-count="3.3" advance-count="1" loop="false"> 
+					<div class="item">
+						<a href="">
+							<amp-img src="./GameImage/CFProviders/thumbnail/normal/cock_sv388.webp"
+							width="70"
+							height="70"
+							layout="responsive"
+							alt="">
+							</amp-img>
+							<div class="mobile-game-icons">SV388</div>
+						</a>
+					</div>
+				  </amp-base-carousel>
+			</div>
+		  </div>
+	  </div>
+
+
 
 	  <!-- <div class="container">
 
